@@ -43,12 +43,13 @@ public class Herrero extends UntypedActor {
         } else if (o == Mensaje.MATERIALES) {
             log.info("[Herrero] está creando espada...");
             herreroService.crearEspada();
-            espadachines.get(0).tell(Espadachin.Mensaje.ESPADA_NUEVA, getSelf());
-            espadachines.remove(0);
+            log.info("[Herrero] ha creado espada.");
+            if (!espadachines.isEmpty()) {
+                espadachines.get(0).tell(Espadachin.Mensaje.ESPADA_NUEVA, getSelf());
+                espadachines.remove(0);
+            }
         } else {
             unhandled(o);
         }
     }
-
-
 }

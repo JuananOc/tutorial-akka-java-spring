@@ -12,9 +12,10 @@ import javax.inject.Named;
 @Scope("prototype")
 public class Espadachin extends UntypedActor {
 
+
     public enum Mensaje {
-        ESPADA_ROTA,
-        ESPADA_NUEVA
+        ESPADA_NUEVA,
+        ESPADA_ROTA;
     }
 
     private static final Logger log = LoggerFactory.getLogger(Espadachin.class);

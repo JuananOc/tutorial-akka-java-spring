@@ -32,6 +32,7 @@ public class Minero extends UntypedActor {
         if (o == Mensaje.OBTENER_MATERIALES) {
             log.info("[Minero] está obteniendo materiales...");
             mineroService.obtenerMinerales();
+            log.info("[Minero] ha obtenido materiales.");
             getSender().tell(Herrero.Mensaje.MATERIALES, getSelf());
         } else {
             unhandled(o);
